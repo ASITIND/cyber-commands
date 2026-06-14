@@ -1,4 +1,4 @@
-const toolsData = [
+window toolsData = [
   {
     name: "Hydra [Terminal]",
     category: "terminal",
