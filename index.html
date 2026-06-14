@@ -103,6 +103,49 @@
             overflow-x: auto;
             margin-top: 5px;
             font-weight: bold;
+       /* Sidebar Styling */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* शुरुआत में यह स्क्रीन के बाहर छिपा रहेगा */
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    transition: 0.3s; /* खुलने और बंद होने का स्मूथ एनिमेशन */
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 2px 0px 10px rgba(0,0,0,0.5);
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #b3b3b3;
+    display: block;
+    transition: 0.2s;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* Hover effect for links */
+.sidebar a:hover {
+    color: #ffffff;
+    background-color: #0056b3;
+}
+
+/* Close button inside sidebar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
         }
     </style>
 </head>
@@ -149,6 +192,59 @@
 <script src="guides.js"></script>
     
     <script>
+        // Sidebar open and close functions
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.left = '0px'; // साइडबार को स्क्रीन पर लाएगा
+        });
+    }
+
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.left = '-250px'; // साइडबार को वापस छिपाएगा
+        });
+    }
+});
+        // Function to display the selected safety guide content
+function displayGuide(guideId) {
+    const container = document.getElementById('tools-container');
+    if (!container) return;
+
+    if (typeof guidesData !== 'undefined') {
+        const guide = guidesData.find(g => g.id === guideId);
+        if (guide) {
+            container.innerHTML = `
+                <div class="tool-card" style="border-left: 5px solid #0056b3; background-color: #1a1a1a; padding: 20px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); color: white;">
+                    <h2 style="color: #0056b3; margin-top: 0;">${guide.title}</h2>
+                    <p style="font-size: 16px; line-height: 1.6; color: #b3b3b3;">${guide.content}</p>
+                </div>
+            `;
+            // गाइड लोड होने के बाद साइडबार को अपने आप बंद करने के लिए
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.style.left = '-250px';
+        }
+    } else {
+        console.error("guidesData is not loaded from guides.js");
+    }
+}
+
+// Attach click events to all guide links inside the sidebar
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.guide-link');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const guideId = link.getAttribute('data-guide');
+            displayGuide(guideId);
+        });
+    });
+});
+        
     // Function to render and display the tools on the page
     function displayTools(tools) {
         const container = document.getElementById('tools-container');
