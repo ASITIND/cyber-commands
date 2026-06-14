@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Command Hub</title>
+    <style>
+        /* White Theme Design */
+        body {
+            background-color: #ffffff;
+            color: #111111;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 15px;
+            margin: 0;
+        }
+
+        /* Header and Title */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        .menu-btn {
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #0056b3;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        /* Disclaimer Box Styling */
+        .disclaimer-box {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Search Bar Design */
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border: 2px solid #cccccc;
+            border-radius: 6px;
+            color: #000000;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .search-bar:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        /* Category Buttons */
+        .cat-btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cat-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Tool Cards Design */
+        .tool-card {
+            background-color: #f1f3f5;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .tool-title {
+            color: #d9383a;
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .tool-info {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .command-box {
+            background-color: #21262d;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <button class="menu-btn">☰</button>
+        <h1>Cyber Command Hub</h1>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>⚠️ WARNING / DISCLAIMER:</strong> All commands and tools listed on this website are strictly for educational purposes and authorized security testing only. Using these tools for unauthorized hacking is illegal and punishable by law.
+    </div>
+
+    <input type="text" class="search-bar" placeholder="Search Tools and Commands...">
+
+    <div class="category-section">
+        <h3>Select Category:</h3>
+        <button class="cat-btn">Linux Commands 🐧</button>
+        <button class="cat-btn">Termux Commands 📲</button>
+        <button class="cat-btn">Terminal Commands 🖥️</button>
+    </div>
+
+    <div id="tools-container"></div>
+
+    <script>
+        const toolsData = [
+            {
+                name: "Hydra",
+                category: "Terminal",
+                description: "A fast network login hacking tool used to test password strength.",
+                download: "Available in Kali Linux. For Termux type: apt install hydra",
+                command: "hydra -l admin -P passwords.txt ssh://192.168.1.1"
+            },
+            {
+                name: "SQLmap",
+                category: "Linux",
+                description: "An automatic tool used to find and exploit SQL injection vulnerabilities.",
+                download: "git clone https://github.com/sqlmapproject/sqlmap.git",
+                command: "python sqlmap.py -u 'http://example.com/page.php?id=1' --dbs"
+            },
+            {
+                name: "Nmap",
+                category: "Linux",
+                description: "A network scanner tool used to discover open ports and security weaknesses.",
+                download: "For Linux or Termux type: apt install nmap",
+                command: "nmap -sV example.com"
+            },
+            {
+                name: "Basic Linux - List Files",
+                category: "Linux",
+                description: "A command used to list all files and directories in the current folder.",
+                download: "Pre-installed in Linux and Termux terminal.",
+                command: "ls -la"
+            },
+            {
+                name: "Tool-X",
+                category: "Termux",
+                description: "A hacking tool installer for Termux with over 300 tools.",
+                download: "git clone https://github.com/Rajkumrdusad/Tool-X.git",
+                command: "cd Tool-X && chmod +x install.aex && ./install.aex"
+            },
+            {
+                name: "Metasploit in Termux",
+                category: "Termux",
+                description: "A powerful penetration testing framework for exploiting vulnerabilities.",
+                download: "pkg install metasploit",
+                command: "msfconsole"
+            },
+            {
+                name: "Nikto",
+                category: "Linux",
+                description: "A web server scanner that tests for dangerous files and outdated software.",
+                download: "sudo apt install nikto",
+                command: "nikto -h http://example.com"
+            },
+            {
+                name: "John the Ripper",
+                category: "Terminal",
+                description: "A fast password cracking tool used to find weak passwords via hashes.",
+                download: "sudo apt install john",
+                command: "john --wordlist=pass.txt hash.txt"
+            },
+            {
+                name: "Wireshark CLI (Tshark)",
+                category: "Linux",
+                description: "A network protocol analyzer that lets you capture and interactively browse traffic.",
+                download: "sudo apt install tshark",
+                command: "tshark -i eth0"
+            },
+            {
+                name: "Dirb",
+                category: "Terminal",
+                description: "A web content scanner that looks for hidden directories and pages.",
+                download: "sudo apt install dirb",
+                command: "dirb http://example.com/ /usr/share/wordlists/dirb/common.txt"
+            },
+            {
+                name: "Wget",
+                category: "Linux",
+                description: "A network utility to download files from servers via HTTP, HTTPS, and FTP.",
+                download: "pkg install wget / apt install wget",
+                command: "wget http://example.com/file.zip"
+            },
+            {
+                name: "Curl",
+                category: "Terminal",
+                description: "A command line tool to transfer data to or from a server.",
+                download: "Pre-installed. For Termux: pkg install curl",
+                command: "curl -I https://www.google.com"
+            },
+            {
+                name: "Netcat (nc)",
+                category: "Terminal",
+                description: "A networking utility for reading from and writing to network connections using TCP or UDP.",
+                download: "Pre-installed in most Linux systems.",
+                command: "nc -zv 192.168.1.1 22-80"
+            },
+            {
+                name: "Whois",
+                category: "Linux",
+                description: "A search utility for discovering owner information and registration details of a domain.",
+                download: "apt install whois",
+                command: "whois google.com"
+            },
+            {
+                name: "Gobuster",
+                category: "Linux",
+                description: "A tool used to brute-force URIs, directories, files, and DNS subdomains.",
+                download: "sudo apt install gobuster",
+                command: "gobuster dir -u http://example.com -w wordlist.txt"
+            },
+            {
+                name: "WhatWeb",
+                category: "Terminal",
+                description: "Identifies websites and technologies running on a target server.",
+                download: "sudo apt install whatweb",
+                command: "whatweb example.com"
+            },
+            {
+                name: "Hashcat",
+                category: "Terminal",
+                description: "An advanced and very fast password recovery utility utilizing CPU or GPU power.",
+                download: "sudo apt install hashcat",
+                command: "hashcat -m 0 hash.txt wordlist.txt"
+            },
+            {
+                name: "Ping",
+                category: "Terminal",
+                description: "Checks network connectivity between the host and a target destination.",
+                download: "Pre-installed utility.",
+                command: "ping -c 4 google.com"
+            },
+            {
+                name: "Traceroute",
+                category: "Linux",
+                description: "Displays the path and measures transit delays of packets across a network.",
+                download: "apt install traceroute",
+                command: "traceroute google.com"
+            },
+            {
+                name: "Ifconfig / Ip link",
+                category: "Terminal",
+                description: "Displays network interface configuration parameters and IP addresses.",
+                download: "Pre-installed utility.",
+                command: "ifconfig"
+            },
+            {
+                name: "Chmod",
+                category: "Terminal",
+                description: "Changes the file system permissions of files or folders.",
+                download: "Pre-installed utility.",
+                command: "chmod +x script.sh"
+            },
+            {
+                name: "RED_HAWK",
+                category: "Termux",
+                description: "An all-in-one tool for information gathering, vulnerability scanning, and crawling.",
+                download: "git clone https://github.com/Tuhinshubhra/RED_HAWK.git",
+                command: "cd RED_HAWK && php rhawk.php"
+            },
+            {
+                name: "Lazymux",
+                category: "Termux",
+                description: "A Termux tool installer that provides a collection of useful tools for beginners.",
+                download: "git clone https://github.com/Gameye98/Lazymux.git",
+                command: "cd Lazymux && python lazymux.py"
+            },
+            {
+                name: "Nmap Scripting Engine (NSE)",
+                category: "Linux",
+                description: "Allows users to write and execute scripts to automate networking tasks and scans.",
+                download: "Included with Nmap installation.",
+                command: "nmap --script vuln example.com"
+            },
+            {
+                name: "Airgeddon",
+                category: "Linux",
+                description: "A multi-use bash script for auditing wireless networks.",
+                download: "sudo apt install airgeddon",
+                command: "sudo airgeddon"
+            },
+            {
+                name: "Macchanger",
+                category: "Linux",
+                description: "A utility for viewing and changing the MAC address of network interfaces.",
+                download: "sudo apt install macchanger",
+                command: "sudo macchanger -r eth0"
+            }
+        ];
+
+        function displayTools(tools) {
+            const container = document.getElementById('tools-container');
+            container.innerHTML = ''; 
+
+            if(tools.length === 0) {
+                container.innerHTML = '<p style="color: red; font-weight: bold; padding: 10px;">No tools found! Try searching for Hydra, SQLmap, or Nmap.</p>';
+                return;
+            }
+
+            tools.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.innerHTML = `
+                    <h4 class="tool-title">${tool.name} [${tool.category}]</h4>
+                    <p class="tool-info"><strong>Description:</strong> ${tool.description}</p>
+                    <p class="tool-info"><strong>Installation Guide:</strong> <code>${tool.download}</code></p>
+                    <p class="tool-info"><strong>Run Command:</strong></p>
+                    <div class="command-box">${tool.command}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        displayTools(toolsData);
+
+        document.querySelector('.search-bar').addEventListener('input', function(e) {
+            const searchWord = e.target.value.toLowerCase().trim();
+            const filteredTools = toolsData.filter(tool => {
+                return tool.name.toLowerCase().includes(searchWord) || 
+                       tool.description.toLowerCase().includes(searchWord);
+            });
+            displayTools(filteredTools);
+        });
+
+        document.querySelectorAll('.cat-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const categoryName = this.innerText.split(' ')[0]; 
+                const filteredTools = toolsData.filter(tool => {
+                    return tool.category.toLowerCase() === categoryName.toLowerCase();
+                });
+                document.querySelector('.search-bar').value = categoryName;
+                displayTools(filteredTools);
+            });
+        });
+    </script>
+</body>
+</html>
