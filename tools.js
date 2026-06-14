@@ -1,4 +1,5 @@
-window toolsData = [
+// Global variable holding the cyber security tools data
+window.toolsData = [
   {
     name: "Hydra [Terminal]",
     category: "terminal",
