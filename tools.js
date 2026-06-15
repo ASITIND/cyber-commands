@@ -100,4 +100,4 @@ window.toolsData = [
     installation: "To install on standard terminals or Linux: apt install amass",
     command: "amass enum -d example.com"
 }
-  
+  ];
