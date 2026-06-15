@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating System Hardening Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #ffc107;
+            margin-top: 25px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .tech-note {
+            background-color: #212d3a;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-btn:hover {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Operating System Hardening Guide 💻</h1>
+    
+    <p><strong>The Concept of Attack Surface Reduction:</strong> Operating system hardening is the process of securing an operating system (OS) by reducing its surface of vulnerability. A default OS installation is typically designed for convenience and out-of-the-box compatibility, meaning many non-essential services, communication ports, and permissive configurations are enabled by default. For a professional security setup, leaving these elements untouched creates unnecessary gaps that attackers can exploit to gain remote control or escalate system privileges.</p>
+    
+    <h2>1. The Foundation: Principles of Least Privilege</h2>
+    <p>One of the most effective strategies in system hardening is controlling user execution levels. Running daily activities using a master administrator or root account is highly dangerous:</p>
+    <ul>
+        <li><strong>Create Standard User Accounts:</strong> Utilize a standard account for daily browsing, document editing, and regular software use. This ensures that even if a malicious script executes, it cannot modify core system files without administrative credentials.</li>
+        <li><strong>Enforce Access Controls:</strong> Turn on User Account Control (UAC) on Windows or utilize strict <code>sudo</code> policies on Linux systems to prompt for manual password confirmation whenever a system-level change occurs.</li>
+    </ul>
+
+    <h2>2. Disabling Non-Essential Services and Network Node Management</h2>
+    <div class="tech-note">
+        <strong>The Unused Port Vulnerability:</strong> Background processes like legacy file-sharing protocols, remote assistance daemons, and unmonitored printer services often run silently. Hackers utilize automated network scanning tools to discover these open doors and inject harmful payloads directly into system memory.
+    </div>
+    <p>Audit your system components regularly. On Windows workstations, turn off features like remote registry access and SMBv1 protocols. On Linux environments, minimize network exposure by disabling unnecessary daemons like Telnet or unencrypted FTP services, replacing them exclusively with secure, cryptographic alternatives like SSH running on non-standard ports.</p>
+
+    <h2>3. Implementing Advanced Security Baselines</h2>
+    <p>To establish an elite defensive architecture, transition beyond basic settings into deeper administrative controls:</p>
+    <ul>
+        <li><strong>Activate Built-in Host Firewalls:</strong> Ensure your local firewall is active and configured to block all unsolicited inbound traffic connections while inspecting outbound data flows for anomalies.</li>
+        <li><strong>Enable Full-Disk Encryption (FDE):</strong> Protect data at rest by deploying tools like BitLocker (Windows) or LUKS (Linux). If a physical device is lost or stolen, full-disk encryption prevents adversaries from bypassing OS authentication by reading drive sectors directly.</li>
+        <li><strong>Configure Strict Boot Security:</strong> Enable Secure Boot within your hardware UEFI console settings and set a strong supervisor password. This blocks unauthorized external rootkits from executing before the operating system core loads into memory during power cycles.</li>
+    </ul>
+
+    <h2>4. Continuous Maintenance and Log Auditing</h2>
+    <p>Hardening a system is not a single, one-time task; it requires a persistent operational cycle. Keep all system drivers, software libraries, and security updates running on automated schedules. Furthermore, establish a habit of reviewing internal security log monitors (such as Windows Event Viewer or Linux <code>/var/log/auth.log</code>) to inspect failed login attempts or unauthorized group modifications. By minimizing your local exposure profile and maintaining strict access configurations, you can run a highly secure, professional workstation environment.</p>
+    
+    <a href="index.html" class="back-btn">← Go Back to Home</a>
+</div>
+
+</body>
+</html>
+
