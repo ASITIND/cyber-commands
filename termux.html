@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termux Safety Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #ffc107;
+            margin-top: 25px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .code-block {
+            background-color: #111;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+            font-family: monospace;
+            margin: 10px 0;
+            display: block;
+            color: #00ff00;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-btn:hover {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Termux Safety Guide 📱</h1>
+    
+    <p><strong>What is Termux?</strong> Termux is a powerful terminal emulator and Linux environment application for Android devices. It allows users to run a full-fledged command-line interface directly on their smartphones without needing root access. Because it provides access to advanced development, networking, and scripting tools, Termux is highly popular among students, developers, and cybersecurity enthusiasts. However, with great power comes great responsibility, and using Termux without proper knowledge can lead to device security risks or legal issues.</p>
+    
+    <h2>1. The Golden Rule: Trust the Source</h2>
+    <p>The most significant security risk when using Termux comes from executing unknown scripts found on the internet. Cybercriminals often share malicious scripts on platforms like GitHub, masking them as helpful hacking or automation tools. If you clone a repository and run a script using Python or Bash without inspecting it, that script can secretly access your internal storage, steal personal tokens, or compromise your device. Always read the source code before running commands like <code>bash script.sh</code> or <code>python main.py</code>.</p>
+    
+    <h2>2. Keep Packages Updated and Secure</h2>
+    <p>Just like a standard Linux system, maintaining updated software is critical to patching security vulnerabilities. Always use official package managers to install utilities. When you initialize Termux, run the core update commands regularly to ensure your environment is safe from known exploits:</p>
+    <span class="code-block">pkg update && pkg upgrade</span>
+    <p>Avoid changing the official repositories to unverified mirror servers, as this could expose your terminal to tampered package versions containing backdoors.</p>
+    
+    <h2>3. Avoid Storage Abuse and Malicious Software</h2>
+    <ul>
+        <li><strong>Isolate Storage Access:</strong> Be cautious when running the <code>termux-setup-storage</code> command. This grants the application permission to interact with your phone's entire internal shared storage. Only grant this if absolutely necessary for your scripts.</li>
+        <li><strong>No Untrusted Binaries:</strong> Never download compiled binary files from unofficial forums or sketchy chat groups. Stick to standard packages provided by the Termux community.</li>
+        <li><strong>Understand the Commands:</strong> Before executing commands that modify data (such as <code>rm -rf</code>), double-check your path to prevent accidental loss of important personal files.</li>
+    </ul>
+
+    <h2>4. Use Termux for Ethical Learning Only</h2>
+    <p>Termux includes tools that can perform security auditing, network scanning, and data analysis. It is crucial to understand that using these tools against networks, servers, or individuals without explicit, written permission is strictly illegal. Professional developers and security analysts use environments like Termux to secure their own systems, test their own applications, and learn the mechanics of Linux operating systems. Always use your terminal workspace to build knowledge and practice skills safely within your own laboratory setup.</p>
+    
+    <a href="index.html" class="back-btn">← Go Back to Home</a>
+</div>
+
+</body>
+</html>
+
