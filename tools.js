@@ -56,5 +56,48 @@ window.toolsData = [
     description: "A high-speed network authentication cracking tool built for enterprise security testing, helping auditors find weak credentials across massive networks.",
     installation: "To install on Linux or Termux environments type: apt install ncrack",
     command: "ncrack --user admin -P passwords.txt ftp://192.168.1.5"
+},
+
+{
+    name: "Whois [Terminal]",
+    category: "terminal",
+    description: "A command-line utility used to query databases that store the registered users or assignees of an Internet resource, such as a domain name or an IP address block.",
+    installation: "Pre-installed on most systems. For Termux/Ubuntu: apt install whois",
+    command: "whois google.com"
+},
+{
+    name: "TheHarvester [Terminal]",
+    category: "terminal",
+    description: "A tool designed to gather public search engine data, emails, subdomains, and hostnames linked to a specific corporate domain for penetration testing.",
+    installation: "Available in Kali Linux. Install via: apt install theharvester",
+    command: "theHarvester -d example.com -l 500 -b google"
+},
+{
+    name: "Nmap [Terminal]",
+    category: "terminal",
+    description: "An open-source network mapper used for security auditing, network discovery, and identifying active hosts and open ports on a system.",
+    installation: "To install on standard terminals or Termux: apt install nmap",
+    command: "nmap -v -A 192.168.1.1"
+},
+  {
+    name: "Dns-Recon [Terminal]",
+    category: "terminal",
+    description: "A tool used by network administrators to check and audit DNS records and domain configurations to ensure proper setup.",
+    installation: "Available in security repositories. For standard Linux: apt install dnsrecon",
+    command: "dnsrecon -d example.com"
+},
+{
+    name: "Sherlock-Finder [Terminal]",
+    category: "terminal",
+    description: "An open-source profile locator tool that helps users search for missing public account names across multiple social websites.",
+    installation: "git clone https://github.com/sherlock-project/sherlock.git",
+    command: "python3 sherlock.py username_here"
+},
+{
+    name: "Amass-Asset [Terminal]",
+    category: "terminal",
+    description: "An asset discovery tool that helps organization mapping by compiling public data records to view overall digital presence.",
+    installation: "To install on standard terminals or Linux: apt install amass",
+    command: "amass enum -d example.com"
 }
-];
+  
