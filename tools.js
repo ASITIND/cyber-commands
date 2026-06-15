@@ -57,3 +57,4 @@ window.toolsData = [
     installation: "To install on Linux or Termux environments type: apt install ncrack",
     command: "ncrack --user admin -P passwords.txt ftp://192.168.1.5"
 }
+];
