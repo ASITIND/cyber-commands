@@ -99,7 +99,27 @@
     </div>
 
     <script>
-        // JavaScript logic hum baad me yahan jodenge
+    // JavaScript logic hum baad me yahan jodenge
+        document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const sidebar = document.getElementById('sidebar');
+
+    // थ्री-लाइन बटन पर क्लिक करने पर साइडबार खोलने के लिए
+    if (menuBtn && sidebar) {
+        menuBtn.addEventListener('click', () => {
+            sidebar.style.left = '0px'; 
+        });
+    }
+
+    // 'X' बटन पर क्लिक करने पर साइडबार वापस छिपाने के लिए
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.style.left = '-250px'; 
+        });
+    }
+});
+        
     </script>
 
 </body>
