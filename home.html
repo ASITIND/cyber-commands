@@ -6,7 +6,76 @@
     <title>Home - Cyber Command Hub</title>
     <style>
         /* CSS styling hum agle step me yahan jodenge */
-    </style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* पूरा पेज एकदम सफ़ेद */
+    color: #333333;
+}
+
+/* ऊपर की नेविगेशन बार */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* थ्री-लाइन (Hamburger) बटन */
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333333;
+}
+
+/* मुख्य कमांड पेज पर जाने का लिंक */
+.hub-link {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* छुपा हुआ साइडबार */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* शुरुआत में यह स्क्रीन से बाहर बाईं तरफ छिपा रहेगा */
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: left 0.3s ease; /* खुलने और बंद होने का स्मूथ एनीमेशन */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* साइडबार बंद करने का बटन (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    margin-top: 40px;
+}
+
+/* मुख्य कंटेंट एरिया */
+.main-content {
+    padding: 40px 20px;
+    text-align: center;
+}
+</style>
 </head>
 <body>
 
