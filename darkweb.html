@@ -7,141 +7,191 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
-            line-height: 1.6;
-        }
-        .header {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000000;
+            color: #b30000; /* डिफ़ॉल्ट रूप से धुंधला लाल अक्षर */
+            line-height: 1.8;
             padding: 20px;
-            background-color: #111111;
-            color: #ffffff;
+        }
+
+        .header {
+            border-bottom: 2px solid #ff0000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
+        .header h1 {
+            font-size: 32px;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+            margin: 0;
+        }
+
         .back-btn {
-            color: #00adb5;
+            color: #8b0000;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
         }
+
+        .back-btn:hover {
+            color: #ff0000;
+        }
+
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .section-card {
-            background: #f9f9f9;
-            border-left: 5px solid #111111;
-            padding: 20px;
-            margin-bottom: 25px;
+
+        /* लिस्ट स्टाइलिंग - बिना किसी बॉक्स के */
+        .list-section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #ff0000;
+            margin-top: 40px;
+            border-bottom: 1px dashed #8b0000;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #ff3333;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 18px;
+            color: #b30000; /* धुंधला लाल रंग */
+        }
+
+        strong {
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000;
+        }
+
+        code {
+            background-color: #1a0000;
+            color: #ff3333;
+            padding: 2px 6px;
             border-radius: 4px;
         }
-        h2 {
-            color: #111111;
-            margin-top: 0;
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>Dark Web & I2P Information Hub 🌐</h1>
-        <a href="home.html" class="back-btn">⬅️ Back to Home</a>
+        <h1>DARK WEB & I2P INSIGHTS 🌐</h1>
+        <a href="home.html" class="back-btn">⬅️ BACK TO HOME</a>
     </div>
 
     <div class="container">
+
+        <div class="list-section">
+            <h2>1. The Web Layers: Understanding the Internet's Structure 🌐</h2>
+            <p>The internet is much larger and deeper than what we see on a daily basis. To understand how the digital world is built, it is divided into three main layers: the Surface Web, the Deep Web, and the Dark Web.</p>
+            
+            <h3>A. The Surface Web 🌊</h3>
+            <p>This is the visible part of the internet that we use every day. Standard search engines like Google, Bing, or Yahoo can easily crawl and index these pages. When you search for something and instantly get a public link, you are accessing the Surface Web.</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+                <li>📊 <strong>Size:</strong> It makes up only about 4% to 5% of the entire internet.</li>
+                <li>🔍 <strong>Access:</strong> No special software or permission is required. You can open it using any standard browser like Chrome or Firefox.</li>
+                <li>💻 <strong>Examples:</strong> Wikipedia, YouTube, public news blogs, and open social media profiles.</li>
+            </ul>
+
+            <h3>B. The Deep Web 🗄️</h3>
+            <p>The Deep Web consists of data that is hidden from public search engines. This data is not illegal; it is kept private for security, legal, or confidentiality reasons. To access it, you generally need a specific URL, a username, a password, or special authorization.</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+                <li>📊 <strong>Size:</strong> This is the largest part of the internet, occupying roughly 90% to 95% of the digital space.</li>
+                <li>🔑 <strong>Security:</strong> The information is protected behind firewalls and login screens to prevent unauthorized access.</li>
+                <li>🏦 <strong>Examples:</strong> Your personal email inbox, online banking portals, private cloud storage, corporate databases, and medical records.</li>
+            </ul>
+
+            <h3>C. The Dark Web 👥</h3>
+            <p>The Dark Web is a very small, specialized subsection of the Deep Web. It is intentionally hidden from standard browsers and search engines. Accessing it requires specific software, configurations, and encryption keys. In this network, the identity and location of both the user and the website remain highly anonymous.</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+                <li>🛡️ <strong>Anonymity:</strong> Traffic is routed through heavily encrypted networks, making IP addresses extremely difficult to track.</li>
+                <li>🌐 <strong>Networks:</strong> It is not a single network; it is composed of different hidden overlay networks like Tor, I2P, and Freenet.</li>
+            </ul>
         </div>
-<div class="section-card">
-    <h2>1. The Web Layers: Understanding the Internet's Structure 🌐</h2>
-    <p>The internet is much larger and deeper than what we see on a daily basis. To understand how the digital world is built, it is divided into three main layers: the Surface Web, the Deep Web, and the Dark Web.</p>
-    
-    <h3>A. The Surface Web 🌊</h3>
-    <p>This is the visible part of the internet that we use every day. Standard search engines like Google, Bing, or Yahoo can easily crawl and index these pages. When you search for something and instantly get a public link, you are accessing the Surface Web.</p>
-    <p><strong>Key Points:</strong></p>
-    <ul>
-        <li>📊 <strong>Size:</strong> It makes up only about 4% to 5% of the entire internet.</li>
-        <li>🔍 <strong>Access:</strong> No special software or permission is required. You can open it using any standard browser like Chrome or Firefox.</li>
-        <li>💻 <strong>Examples:</strong> Wikipedia, YouTube, public news blogs, and open social media profiles.</li>
-    </ul>
 
-    <h3>B. The Deep Web 🗄️</h3>
-    <p>The Deep Web consists of data that is hidden from public search engines. This data is not illegal; it is kept private for security, legal, or confidentiality reasons. To access it, you generally need a specific URL, a username, a password, or special authorization.</p>
-    <p><strong>Key Points:</strong></p>
-    <ul>
-        <li>📊 <strong>Size:</strong> This is the largest part of the internet, occupying roughly 90% to 95% of the digital space.</li>
-        <li>🔑 <strong>Security:</strong> The information is protected behind firewalls and login screens to prevent unauthorized access.</li>
-        <li>🏦 <strong>Examples:</strong> Your personal email inbox, online banking portals, private cloud storage (like Google Drive), corporate databases, and medical records.</li>
-    </ul>
+        <div class="list-section">
+            <h2>2. The Tor Network: How Onion Routing Works 🧅</h2>
+            <p>Tor stands for <strong>The Onion Router</strong>. It is a free, open-source software designed to enable anonymous communication by directing internet traffic through a worldwide, volunteer-overlay network.</p>
+            
+            <h3>A. The Concept of Onion Routing 🧅</h3>
+            <p>Just like an onion has multiple layers, Onion Routing wraps your data in multiple layers of encryption. As the data moves from one server to another, one layer of encryption is peeled off, revealing the next destination, but never the original source.</p>
 
-    <h3>C. The Dark Web 👥</h3>
-    <p>The Dark Web is a very small, specialized subsection of the Deep Web. It is intentionally hidden from standard browsers and search engines. Accessing it requires specific software, configurations, and encryption keys. In this network, the identity and location of both the user and the website remain highly anonymous.</p>
-    <p><strong>Key Points:</strong></p>
-    <ul>
-        <li>🛡️ <strong>Anonymity:</strong> Traffic is routed through heavily encrypted networks, making IP addresses extremely difficult to track.</li>
-        <li>🌐 <strong>Networks:</strong> It is not a single network; it is composed of different hidden overlay networks like Tor, I2P, and Freenet.</li>
-    </ul>
-</div>
-    <div class="section-card">
-    <h2>2. The Tor Network: How Onion Routing Works 🧅</h2>
-    <p>Tor stands for <strong>The Onion Router</strong>. It is a free, open-source software designed to enable anonymous communication by directing internet traffic through a worldwide, volunteer-overlay network.</p>
-    
-    <h3>A. The Concept of Onion Routing 🧅</h3>
-    <p>Just like an onion has multiple layers, Onion Routing wraps your data in multiple layers of encryption. As the data moves from one server to another, one layer of encryption is peeled off, revealing the next destination, but never the original source.</p>
+            <h3>B. Understanding Tor Nodes 🖥️</h3>
+            <p>When you use the Tor network, your data travels through three different volunteer-operated servers, known as nodes:</p>
+            <ul>
+                <li>📥 <strong>Entry Node (Guard Node):</strong> This is the first stop for your traffic. It sees your real IP address but does not see the encrypted data or its final destination.</li>
+                <li>🔄 <strong>Middle Node:</strong> This server receives the data from the entry node and passes it to the next stop. It only knows where the data came from and where it is going next, keeping the entire path private.</li>
+                <li>📤 <strong>Exit Node:</strong> This is the final server in the chain. It strips away the last layer of encryption and delivers the data to the destination website. It sees the destination but has no idea who sent it.</li>
+            </ul>
 
-    <h3>B. Understanding Tor Nodes 🖥️</h3>
-    <p>When you use the Tor network, your data travels through three different volunteer-operated servers, known as nodes:</p>
-    <ul>
-        <li>entry <strong>Entry Node (Guard Node):</strong> This is the first stop for your traffic. It sees your real IP address but does not see the encrypted data or its final destination.</li>
-        <li>middle <strong>Middle Node:</strong> This server receives the data from the entry node and passes it to the next stop. It only knows where the data came from and where it is going next, keeping the entire path private.</li>
-        <li>exit <strong>Exit Node:</strong> This is the final server in the chain. It strips away the last layer of encryption and delivers the data to the destination website. It sees the destination but has no idea who sent it.</li>
-    </ul>
+            <h3>C. What are .onion Addresses? 🔗</h3>
+            <p>Websites on the Tor network do not use standard domains like <code>.com</code> or <code>.org</code>. Instead, they use special <code>.onion</code> top-level domains. These addresses are automatically generated cryptographic hashes that look like a random string of letters and numbers.</p>
+        </div>
 
-    <h3>C. What are .onion Addresses? 🔗</h3>
-    <p>Websites on the Tor network do not use standard domains like <code>.com</code> or <code>.org</code>. Instead, they use special <code>.onion</code> top-level domains. These addresses are automatically generated cryptographic hashes that look like a random string of letters and numbers.</p>
+        <div class="list-section">
+            <h2>3. The Invisible Internet Project (I2P): Garlic Routing Explained 📡</h2>
+            <p>While Tor is designed to provide anonymous access to the public internet, <strong>I2P (Invisible Internet Project)</strong> is built from the ground up as a fully closed, self-contained network. It is designed for secure, anonymous communication, file sharing, and hosting private websites within its own ecosystem.</p>
+            
+            <h3>A. The Concept of Garlic Routing 🧄</h3>
+            <p>I2P uses a unique technology called <strong>Garlic Routing</strong>, which is an advanced variation of Tor's Onion Routing. Instead of wrapping a single message in layers of encryption, Garlic Routing clumps multiple separate messages together into a single encrypted packet, resembling a bulb of garlic. This makes traffic analysis incredibly difficult for attackers.</p>
+
+            <h3>B. Inbound and Outbound Tunnels 🔄</h3>
+            <p>Unlike Tor, which uses the same bidirectional circuit for sending and receiving data, I2P separates its traffic into two unidirectional paths:</p>
+            <ul>
+                <li>📤 <strong>Outbound Tunnels:</strong> When you send a request or a message, it travels through a specific tunnel of volunteer nodes out into the network.</li>
+                <li>📥 <strong>Inbound Tunnels:</strong> When a website or user replies to you, that data travels back through an entirely different set of nodes.</li>
+            </ul>
+            <p>Because the path going out is completely different from the path coming in, it is practically impossible for anyone to map the complete connection between two users.</p>
+
+            <h3>C. Tor vs. I2P: Key Differences 📊</h3>
+            <p>Understanding how these two privacy giants compare helps clear up common misconceptions:</p>
+            <ul>
+                <li>🌍 <strong>Network Focus:</strong> Tor is optimized for browsing external websites anonymously through exit nodes. I2P is optimized for internal peer-to-peer file sharing and decentralized internal services.</li>
+                <li>🔗 <strong>Domain Names:</strong> While Tor uses <code>.onion</code> links, I2P uses its own naming system with <code>.i2p</code> destinations.</li>
+                <li>⚡ <strong>Speed & Routing:</strong> I2P updates its tunnels every 10 minutes to maintain high security, and because it uses decentralized directory services, it doesn't rely on central authorities like Tor does.</li>
+            </ul>
+        </div>
+
+        <div class="list-section">
+            <h2>4. Cyber Safety & Core Cryptographic Principles 🔐</h2>
+            <p>Behind the hidden layers of Tor and I2P lies advanced mathematics and cryptography. Understanding these principles helps security professionals analyze how data privacy is maintained across distributed networks.</p>
+            
+            <h3>A. End-to-End Encryption (E2EE) 🔑</h3>
+            <p>In these networks, data is encrypted on the sender's device and only decrypted on the receiver's destination. No intermediate router, internet service provider, or malicious actor in the middle can read the contents of the packets.</p>
+
+            <h3>B. Decentralization vs. Centralization 🚫🏢</h3>
+            <p>Standard web architectures rely on centralized servers. If that server goes down or is compromised, everything fails. Tor and I2P rely on decentralized networks composed of thousands of independent volunteer nodes, making them highly resilient against single points of failure.</p>
+
+            <h3>C. Operational Security (OpSec) for Researchers 🛡️</h3>
+            <p>When cybersecurity analysts study these environments for threat intelligence, they follow strict operational security rules:</p>
+            <ul>
+                <li>🆔 <strong>Never mix identities:</strong> Personal accounts, real names, or standard email addresses are never used within these networks.</li>
+                <li>🔌 <strong>No browser extensions:</strong> Standard extensions can leak a user's real IP address or device information through browser fingerprinting.</li>
+                <li>🚫 <strong>Disabling JavaScript:</strong> Many advanced tracking scripts rely on JavaScript to discover system vulnerabilities, so researchers often disable it completely during investigations.</li>
+            </ul>
+        </div>
+
     </div>
-   <div class="section-card">
-    <h2>3. The Invisible Internet Project (I2P): Garlic Routing Explained 📡</h2>
-    <p>While Tor is designed to provide anonymous access to the public internet, <strong>I2P (Invisible Internet Project)</strong> is built from the ground up as a fully closed, self-contained network. It is designed for secure, anonymous communication, file sharing, and hosting private websites within its own ecosystem.</p>
-    
-    <h3>A. The Concept of Garlic Routing 🧄</h3>
-    <p>I2P uses a unique technology called <strong>Garlic Routing</strong>, which is an advanced variation of Tor's Onion Routing. Instead of wrapping a single message in layers of encryption, Garlic Routing clumps multiple separate messages together into a single encrypted packet, resembling a bulb of garlic. This makes traffic analysis incredibly difficult for attackers.</p>
 
-    <h3>B. Inbound and Outbound Tunnels 🔄</h3>
-    <p>Unlike Tor, which uses the same bidirectional circuit for sending and receiving data, I2P separates its traffic into two unidirectional paths:</p>
-    <ul>
-        <li>📤 <strong>Outbound Tunnels:</strong> When you send a request or a message, it travels through a specific tunnel of volunteer nodes out into the network.</li>
-        <li>📥 <strong>Inbound Tunnels:</strong> When a website or user replies to you, that data travels back through an entirely different set of nodes.</li>
-    </ul>
-    <p>Because the path going out is completely different from the path coming in, it is practically impossible for anyone to map the complete connection between two users.</p>
-
-    <h3>C. Tor vs. I2P: Key Differences 📊</h3>
-    <p>Understanding how these two privacy giants compare helps clear up common misconceptions:</p>
-    <ul>
-        <li>🌍 <strong>Network Focus:</strong> Tor is optimized for browsing external websites anonymously through exit nodes. I2P is optimized for internal peer-to-peer (P2P) file sharing and decentralized internal services.</li>
-        <li>🔗 <strong>Domain Names:</strong> While Tor uses <code>.onion</code> links, I2P uses its own naming system with <code>.i2p</code> destinations.</li>
-        <li>⚡ <strong>Speed & Routing:</strong> I2P updates its tunnels every 10 minutes to maintain high security, and because it uses decentralized directory services, it doesn't rely on central authorities like Tor does.</li>
-    </ul>
-   </div>
-    <div class="section-card">
-    <h2>4. Cyber Safety & Core Cryptographic Principles 🔐</h2>
-    <p>Behind the hidden layers of Tor and I2P lies advanced mathematics and cryptography. Understanding these principles helps security professionals analyze how data privacy is maintained across distributed networks.</p>
-    
-    <h3>A. End-to-End Encryption (E2EE) 🔑</h3>
-    <p>In these networks, data is encrypted on the sender's device and only decrypted on the receiver's destination. No intermediate router, internet service provider (ISP), or malicious actor in the middle can read the contents of the packets.</p>
-
-    <h3>B. Decentralization vs. Centralization 🚫🏢</h3>
-    <p>Standard web architectures rely on centralized servers (like huge data centers owned by single corporations). If that server goes down or is compromised, everything fails. Tor and I2P rely on decentralized networks composed of thousands of independent volunteer nodes, making them highly resilient against single points of failure.</p>
-
-    <h3>C. Operational Security (OpSec) for Researchers 🛡️</h3>
-    <p>When cybersecurity analysts study these environments for threat intelligence, they follow strict operational security rules:</p>
-    <ul>
-        <li>Identification <strong>Never mix identities:</strong> Personal accounts, real names, or standard email addresses are never used within these networks.</li>
-        <li>Software <strong>No browser extensions:</strong> Standard extensions can leak a user's real IP address or device information (browser fingerprinting).</li>
-        <li>Scripting <strong>Disabling JavaScript:</strong> Many advanced tracking scripts rely on JavaScript to discover system vulnerabilities, so researchers often disable it completely during investigations.</li>
-    </ul>
-    </div>
-    
 </body>
 </html>
-
