@@ -82,6 +82,47 @@
         <li>🌐 <strong>Networks:</strong> It is not a single network; it is composed of different hidden overlay networks like Tor, I2P, and Freenet.</li>
     </ul>
 </div>
+    <div class="section-card">
+    <h2>2. The Tor Network: How Onion Routing Works 🧅</h2>
+    <p>Tor stands for <strong>The Onion Router</strong>. It is a free, open-source software designed to enable anonymous communication by directing internet traffic through a worldwide, volunteer-overlay network.</p>
+    
+    <h3>A. The Concept of Onion Routing 🧅</h3>
+    <p>Just like an onion has multiple layers, Onion Routing wraps your data in multiple layers of encryption. As the data moves from one server to another, one layer of encryption is peeled off, revealing the next destination, but never the original source.</p>
+
+    <h3>B. Understanding Tor Nodes 🖥️</h3>
+    <p>When you use the Tor network, your data travels through three different volunteer-operated servers, known as nodes:</p>
+    <ul>
+        <li>entry <strong>Entry Node (Guard Node):</strong> This is the first stop for your traffic. It sees your real IP address but does not see the encrypted data or its final destination.</li>
+        <li>middle <strong>Middle Node:</strong> This server receives the data from the entry node and passes it to the next stop. It only knows where the data came from and where it is going next, keeping the entire path private.</li>
+        <li>exit <strong>Exit Node:</strong> This is the final server in the chain. It strips away the last layer of encryption and delivers the data to the destination website. It sees the destination but has no idea who sent it.</li>
+    </ul>
+
+    <h3>C. What are .onion Addresses? 🔗</h3>
+    <p>Websites on the Tor network do not use standard domains like <code>.com</code> or <code>.org</code>. Instead, they use special <code>.onion</code> top-level domains. These addresses are automatically generated cryptographic hashes that look like a random string of letters and numbers.</p>
+    </div>
+   <div class="section-card">
+    <h2>3. The Invisible Internet Project (I2P): Garlic Routing Explained 📡</h2>
+    <p>While Tor is designed to provide anonymous access to the public internet, <strong>I2P (Invisible Internet Project)</strong> is built from the ground up as a fully closed, self-contained network. It is designed for secure, anonymous communication, file sharing, and hosting private websites within its own ecosystem.</p>
+    
+    <h3>A. The Concept of Garlic Routing 🧄</h3>
+    <p>I2P uses a unique technology called <strong>Garlic Routing</strong>, which is an advanced variation of Tor's Onion Routing. Instead of wrapping a single message in layers of encryption, Garlic Routing clumps multiple separate messages together into a single encrypted packet, resembling a bulb of garlic. This makes traffic analysis incredibly difficult for attackers.</p>
+
+    <h3>B. Inbound and Outbound Tunnels 🔄</h3>
+    <p>Unlike Tor, which uses the same bidirectional circuit for sending and receiving data, I2P separates its traffic into two unidirectional paths:</p>
+    <ul>
+        <li>📤 <strong>Outbound Tunnels:</strong> When you send a request or a message, it travels through a specific tunnel of volunteer nodes out into the network.</li>
+        <li>📥 <strong>Inbound Tunnels:</strong> When a website or user replies to you, that data travels back through an entirely different set of nodes.</li>
+    </ul>
+    <p>Because the path going out is completely different from the path coming in, it is practically impossible for anyone to map the complete connection between two users.</p>
+
+    <h3>C. Tor vs. I2P: Key Differences 📊</h3>
+    <p>Understanding how these two privacy giants compare helps clear up common misconceptions:</p>
+    <ul>
+        <li>🌍 <strong>Network Focus:</strong> Tor is optimized for browsing external websites anonymously through exit nodes. I2P is optimized for internal peer-to-peer (P2P) file sharing and decentralized internal services.</li>
+        <li>🔗 <strong>Domain Names:</strong> While Tor uses <code>.onion</code> links, I2P uses its own naming system with <code>.i2p</code> destinations.</li>
+        <li>⚡ <strong>Speed & Routing:</strong> I2P updates its tunnels every 10 minutes to maintain high security, and because it uses decentralized directory services, it doesn't rely on central authorities like Tor does.</li>
+    </ul>
+   </div>
     
 </body>
 </html>
