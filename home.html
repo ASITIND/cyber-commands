@@ -239,25 +239,51 @@
             document.getElementById('scanTerminal').innerHTML = `[-] Could not fetch Public IP (Offline/Blocked).\n[+] Reverted to Localhost. Ready to scan...`;
         });
         }
-        
-}
-        
-        document.addEventListener('DOMContentLoaded', () => {
+      function startScan() {
+    const target = document.getElementById('targetInput').value.trim();
+    const terminal = document.getElementById('scanTerminal');
+    
+    if (!target) {
+        terminal.innerHTML = `<span style="color: #ff0000; font-weight: bold;">[ERROR] Port scan aborted. Please enter a valid IP address or Domain Name!</span>`;
+        return;
+    }
+    
+    terminal.innerHTML = `[+] Initiating network connection to: ${target}...<br>`;
+    
+    let commonPorts = [21, 22, 23, 25, 53, 80, 110, 443, 8080];
+    let currentPortIndex = 0;
+
+    let interval = setInterval(() => {
+        if (currentPortIndex < commonPorts.length) {
+            let port = commonPorts[currentPortIndex];
+            terminal.innerHTML += `[+] Checking Port ${port}... `;
+            
+            if (port === 80 || port === 443 || port === 8080) {
+                terminal.innerHTML += `<span style="color: #ff0000; font-weight: bold;">[OPEN]</span><br>`;
+            } else {
+                terminal.innerHTML += `<span style="color: #555;">[CLOSED]</span><br>`;
+            }
+            currentPortIndex++;
+        } else {
+            clearInterval(interval);
+            terminal.innerHTML += `<br>[√] Scan completed for ${target}. Diagnostics finished.`;
+        }
+    }, 400);
+      }
+document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const closeBtn = document.getElementById('closeBtn');
     const sidebar = document.getElementById('sidebar');
 
-    // थ्री-लाइन बटन पर क्लिक करने पर साइडबार खोलने के लिए
     if (menuBtn && sidebar) {
         menuBtn.addEventListener('click', () => {
-            sidebar.style.left = '0px'; 
+            sidebar.style.left = '0px';
         });
     }
 
-    // 'X' बटन पर क्लिक करने पर साइडबार वापस छिपाने के लिए
     if (closeBtn && sidebar) {
         closeBtn.addEventListener('click', () => {
-            sidebar.style.left = '-250px'; 
+            sidebar.style.left = '-250px';
         });
     }
 });
